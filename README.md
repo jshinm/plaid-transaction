@@ -30,9 +30,5 @@ Initially we have to create an environment file for login credential. Simple use
 
 `REDIRECT_URI` must be matched to the receiving end of the Plaid server. If not deploying for actual service, the local address (https://localhost:3001/oauth-link) is used here. It can be set from the [api](https://dashboard.plaid.com/team/api) section of the Plaid dashboard. Note that as opposed to Plaid [tutorial], the address is secure protocol is used (i.e., https instead of http). 
 
-## Dashboard Image after bank account is connected
-
-
-
 ## Additional Information
 More indepth explanation can be found from the [original Plaid manual](pattern-readme.md)
