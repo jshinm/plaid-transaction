@@ -30,7 +30,7 @@ Initially we have to create an environment file for login credential. Simple use
 
 `PLAID_ENV` takes either `sandbox` or `development`. In order to actually test the connection to banking institutions, the app has to be loaded as a dev mode, otherwise it will throw credential error when prompted.
 
-`REDIRECT_URI` must be matched to the receiving end of the Plaid server. If not deploying for actual service, the local address (https://localhost:3001/oauth-link) is used here. It can be set from the [api](https://dashboard.plaid.com/team/api) section of the Plaid dashboard. Note that as opposed to Plaid [tutorial], the address is secure protocol is used (i.e., https instead of http). 
+`REDIRECT_URI` must be matched to the receiving end of the Plaid server. If not deploying for actual service, the local address (https://localhost:3001/oauth-link) is used here. It can be set from the [api](https://dashboard.plaid.com/team/api) section of the Plaid dashboard. Note that as opposed to Plaid tutorial, the address is secure protocol is used (i.e., https instead of http). 
 
 ## Additional Information
 * More in-depth explanation can be found from the [original Plaid manual](pattern-readme.md)
