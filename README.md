@@ -32,6 +32,8 @@ Initially we have to create an environment file for login credential. Simple use
 
 `REDIRECT_URI` must be matched to the receiving end of the Plaid server. If not deploying for actual service, the local address (https://localhost:3001/oauth-link) is used here. It can be set from the [api](https://dashboard.plaid.com/team/api) section of the Plaid dashboard. Note that as opposed to Plaid tutorial, the address is secure protocol is used (i.e., https instead of http). 
 
+* When run locally, or has any issue with authentification, leave the redirect empty
+
 ## Additional Information
 * More in-depth explanation can be found from the [original Plaid manual](pattern-readme.md)
 * Other nfcu projects are found [here](https://github.com/morissette/nfcu) and [here](https://github.com/tjhorner/node-nfcu)
