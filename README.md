@@ -15,6 +15,17 @@ Current app was tested in Ubuntu 20.04. Also required is up-to-date Docker for i
 ```
 cp .env.template .env
 ```
+
+- Setting up dotenv file
+
+    - Initially we have to create an environment file for login credential. Simple use .env.template and create .env file. The `PLAID_CLIENT_ID` and `PLAID_SECRET_KEYS` can be found on the [key](https://dashboard.plaid.com/team/keys) section of the Plaid dashboard.
+    
+    - `PLAID_ENV` takes either `sandbox` or `development`. In order to actually test the connection to banking institutions, the app has to be loaded as a dev mode, otherwise it will throw credential error when prompted.
+
+    - `REDIRECT_URI` must be matched to the receiving end of the Plaid server. If not deploying for actual service, the local address (https://localhost:3001/oauth-link) is used here. It can be set from the [api](https://dashboard.plaid.com/team/api) section of the Plaid dashboard. Note that as opposed to Plaid tutorial, the address is secure protocol is used (i.e., https instead of http). 
+
+        * When run locally, or has any issue with authentification, leave the redirect empty
+
 2. Pull docker image (note that sudo is used in case base environment is used)
 ```
 sudo make start
@@ -25,14 +36,7 @@ sudo make start
 sudo make stop
 ```
 
-## Setting up dotenv file
-Initially we have to create an environment file for login credential. Simple use .env.template and create .env file. The `PLAID_CLIENT_ID` and `PLAID_SECRET_KEYS` can be found on the [key](https://dashboard.plaid.com/team/keys) section of the Plaid dashboard.
 
-`PLAID_ENV` takes either `sandbox` or `development`. In order to actually test the connection to banking institutions, the app has to be loaded as a dev mode, otherwise it will throw credential error when prompted.
-
-`REDIRECT_URI` must be matched to the receiving end of the Plaid server. If not deploying for actual service, the local address (https://localhost:3001/oauth-link) is used here. It can be set from the [api](https://dashboard.plaid.com/team/api) section of the Plaid dashboard. Note that as opposed to Plaid tutorial, the address is secure protocol is used (i.e., https instead of http). 
-
-* When run locally, or has any issue with authentification, leave the redirect empty
 
 ## Additional Information
 * More in-depth explanation can be found from the [original Plaid manual](pattern-readme.md)
